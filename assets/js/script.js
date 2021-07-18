@@ -26,6 +26,38 @@ if (workEvents) {
 //Current Day for top of application//
 $("#currentDay").text(today);
 
+//Create Rows//
+planWorkday.forEach(function (timeBlock, index) {
+  var timeLabel = timeBlock.time;
+  var blockColor = colorRow(timeLabel);
+  var row =
+    '<div class="time-block" id="' +
+    index +
+    '"><div class="row no-gutters input-group"><div class="col-sm col-lg-1 input-group-prepend hour justify-content-sm-end pr-3 pt-3">' +
+    timeLabel +
+    '</div><textarea class="form-control ' +
+    blockColor +
+    '">' +
+    timeBlock.event +
+    '</textarea><div class="col-sm col-lg-1 input-group-append"><button class="saveBtn btn-block" type="submit"><i class="fas fa-save"></i></button></div></div></div>';
+
+  // Add rows to container div //
+  $(".container").append(row);
+});
+
+// Color rows based on current time //
+function colorRow(time) {
+  var planNow = moment(now, "H A");
+  var planEntry = moment(time, "H A");
+  if (planNow.isBefore(planEntry) === true) {
+    return "future";
+  } else if (planNow.isAfter(planEntry) === true) {
+    return "past";
+  } else {
+    return "present";
+  }
+}
+
 //Button for Saving Events//
 $(".saveBtn").on("click", function () {
   var blockID = parseInt($(this).closest(".time-block").attr("id"));
