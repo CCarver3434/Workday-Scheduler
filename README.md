@@ -8,7 +8,7 @@ The [Workday-Scheduler](https://ccarver3434.github.io/Workday-Scheduler/) is a s
 
 Here is a screenshot of the application being deployed, along with a link below:
 
-![Workday-Scheduler](assets/images/Workday-Scheduler-screenshot-1.png)
+![Workday-Scheduler](assets/images/Workday-Scheduler-screenshot.png)
 
 [Workday-Scheduler](https://ccarver3434.github.io/Workday-Scheduler/)
 
