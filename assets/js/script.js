@@ -30,4 +30,9 @@ $("#currentDay").text(today);
 $(".saveBtn").on("click", function () {
   var blockID = parseInt($(this).closest(".time-block").attr("id"));
   var userEntry = $.trim($(this).parent().siblings("textarea").val());
+
+  planWorkday[blockID].event = userEntry;
+
+  //Setting local storage//
+  localStorage.setItem("workDay", JSON.stringify(planWorkday));
 });
