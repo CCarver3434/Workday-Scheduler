@@ -25,3 +25,9 @@ if (workEvents) {
 
 //Current Day for top of application//
 $("#currentDay").text(today);
+
+//Button for Saving Events//
+$(".saveBtn").on("click", function () {
+  var blockID = parseInt($(this).closest(".time-block").attr("id"));
+  var userEntry = $.trim($(this).parent().siblings("textarea").val());
+});
