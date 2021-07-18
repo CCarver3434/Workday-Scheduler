@@ -16,3 +16,12 @@ var planWorkday = [
   { time: "4 PM", event: "" },
   { time: "5 PM", event: "" },
 ];
+
+//Local Storage check for saved info//
+var workEvents = JSON.parse(localStorage.getItem("workDay"));
+if (workEvents) {
+  planWorkday = workEvents;
+}
+
+//Current Day for top of application//
+$("#currentDay").text(today);
